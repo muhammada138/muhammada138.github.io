@@ -1,52 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Muhammad Abdullah | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts and libs -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Muhammad Abdullah portfolio" />
 </head>
 <body>
-  <header>
-    <h1>Hi, I'm Muhammad 👋</h1>
-    <p>Computer Science Student | Aspiring AI Developer </p>
+  <!-- Background grid and glow -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a class="logo" href="#top">MA</a>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a class="cta" href="#contact">Contact</a>
+    </nav>
+    <button class="menu" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I'm a Computer Science student passionate about web development, machine learning, and research. I love building projects that combine creativity and logic.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Pathfinding Visualizer</h3>
-      <p>A web app that demonstrates algorithms like A*, Dijkstra, and BFS visually.</p>
-      <a href="#">View on GitHub</a>
-    </div>
-    <div class="project">
-      <h3>League Stats Bot</h3>
-      <p>Discord bot that analyzes player stats and predicts win rates using JSON data.</p>
-      <a href="#">View on GitHub</a>
+  <!-- Hero -->
+  <section id="top" class="hero" aria-label="Intro">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="900">
+      <h1>Hi, I am <span class="accent">Muhammad Abdullah</span></h1>
+      <h2><span id="typed"></span></h2>
+      <p class="tagline">
+        I build clear, fast, and reliable software. I care about good design and simple code.
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#projects"><i class="fa-solid fa-code"></i> View Projects</a>
+        <a class="btn ghost" href="https://github.com/muhammada138" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 muhammada138@hotmail.com</p>
-    <p><a href="https://github.com/muhammada138">GitHub</a> | <a href="https://www.linkedin.com/in/muhammada138/">LinkedIn</a></p>
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container two-col">
+      <div class="card profile" data-aos="fade-right">
+        <!-- Placeholder image. Replace assets/profile.jpg when you have one -->
+        <div class="pfp" role="img" aria-label="Profile photo placeholder"></div>
+      </div>
+      <div class="card" data-aos="fade-left">
+        <h3>About</h3>
+        <p>
+          I am a Computer Science student who likes building things for the web and playing with data.
+          My interests include algorithms, clean UI, and useful automation. I enjoy taking ideas from
+          sketch to shipped.
+        </p>
+        <ul class="facts">
+          <li><i class="fa-regular fa-circle-check"></i> Focus on readable code</li>
+          <li><i class="fa-regular fa-circle-check"></i> Strong fundamentals in Python and JavaScript</li>
+          <li><i class="fa-regular fa-circle-check"></i> Learning systems and AI tooling</li>
+        </ul>
+        <div class="links-row">
+          <a class="icon-link" href="mailto:you@example.com" title="Email">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+          <a class="icon-link" href="https://github.com/muhammada138" target="_blank" rel="noopener" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a class="icon-link" href="https://linkedin.com/in/" target="_blank" rel="noopener" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Muhammad Abdullah</p>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h3 class="section-title" data-aos="fade-up">Projects</h3>
+
+      <div class="grid">
+        <article class="card project" data-aos="zoom-in">
+          <h4>Pathfinding Visualizer</h4>
+          <p>Interactive visualizer for A*, Dijkstra, BFS, and DFS with step controls and wall painting.</p>
+          <div class="project-meta">
+            <span><i class="fa-regular fa-star"></i> Clean UI</span>
+            <span><i class="fa-regular fa-clock"></i> Real time</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </article>
+
+        <article class="card project" data-aos="zoom-in" data-aos-delay="80">
+          <h4>League Stats Bot</h4>
+          <p>Discord bot that aggregates match data and returns role insights and quick predictions.</p>
+          <div class="project-meta">
+            <span><i class="fa-regular fa-star"></i> JSON ingest</span>
+            <span><i class="fa-regular fa-clock"></i> Fast replies</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </article>
+
+        <article class="card project" data-aos="zoom-in" data-aos-delay="160">
+          <h4>Study Dashboard</h4>
+          <p>Web dashboard for spaced repetition, quick notes, and progress bars with local storage.</p>
+          <div class="project-meta">
+            <span><i class="fa-regular fa-star"></i> Minimal</span>
+            <span><i class="fa-regular fa-clock"></i> Offline</span>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+            <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h3 class="section-title" data-aos="fade-up">Get in touch</h3>
+      <p class="center" data-aos="fade-up" data-aos-delay="60">
+        Best way to reach me is email. I also check GitHub and LinkedIn often.
+      </p>
+      <div class="contact-row" data-aos="fade-up" data-aos-delay="120">
+        <a class="btn" href="mailto:you@example.com"><i class="fa-regular fa-envelope"></i> Email</a>
+        <a class="btn ghost" href="https://github.com/muhammada138" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a class="btn ghost" href="https://linkedin.com/in/" target="_blank" rel="noopener">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Muhammad Abdullah</p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="script.js"></script>
 </body>
 </html>
