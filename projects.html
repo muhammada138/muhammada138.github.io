@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Muhammad Abdullah</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="header">
+    <div class="name">Muhammad Abdullah</div>
+    <nav class="nav-top">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="resume.html">Résumé</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://github.com/muhammada138" target="_blank">GitHub</a>
+    </nav>
+  </header>
+
   <main class="page fade">
-    <h1 class="brand">Projects</h1>
+    <a href="index.html" class="back">← Back</a>
+    <h2>Projects</h2>
     <ul class="cards">
-      <li class="card">
-        <div class="card-title">Pathfinding Visualizer</div>
-        <div class="card-note">A clean visual tool for A*, Dijkstra, BFS, and DFS with step controls.</div>
-      </li>
-      <li class="card">
-        <div class="card-title">League Stats Bot</div>
-        <div class="card-note">Ingests match data and returns quick summaries and role insights.</div>
-      </li>
-      <li class="card">
-        <div class="card-title">Study Dashboard</div>
-        <div class="card-note">Local storage, keyboard first, small and fast.</div>
-      </li>
+      <li class="card"><div class="card-title">Pathfinding Visualizer</div><div class="card-note">A minimal interactive visualizer for A*, Dijkstra, and BFS.</div></li>
+      <li class="card"><div class="card-title">League Stats Bot</div><div class="card-note">Fetches and summarizes match data for quick insights.</div></li>
+      <li class="card"><div class="card-title">Study Dashboard</div><div class="card-note">Local tool to manage notes and quick ideas efficiently.</div></li>
     </ul>
-    <footer class="quote">
-      <q>Everything good is built slowly.</q>
-    </footer>
+    <footer class="quote"><q>Everything good is built slowly.</q></footer>
   </main>
   <script src="script.js"></script>
 </body>
