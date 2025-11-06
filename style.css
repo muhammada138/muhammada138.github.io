@@ -175,3 +175,15 @@ a:hover {
     transform: translateY(0);
   }
 }
+
+/* Special styling for the 'here' link on homepage */
+.intro a[href="contact.html"] {
+  color: #d8d8d8; /* softer off-white tone */
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.intro a[href="contact.html"]:hover {
+  color: var(--accent); /* lighter hover color */
+  font-style: italic;
+}
