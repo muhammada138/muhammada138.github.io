@@ -1,92 +1,175 @@
 :root {
-  --bg: #1b1b1b;
-  --text: #f2f2f2;
-  --hover: #a9a9a9;
+  --bg: #181818;
+  --panel: #1f1f1f;
+  --ink: #f1f1f1;
+  --muted: #cfcfcf;
+  --line: rgba(255,255,255,0.06);
+  --accent: #e8e8e8; /* off-white hover accent */
 }
 
-* {
-  box-sizing: border-box;
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
   margin: 0;
-  padding: 0;
-}
-
-html, body {
-  height: 100%;
   background: var(--bg);
-  color: var(--text);
-  font-family: 'Inter', sans-serif;
-  transition: background 0.3s ease;
+  color: var(--ink);
+  font-family: Inter, "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
-main {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/* centered page shell */
+.page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
   text-align: center;
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
+  padding: 24px;
+  gap: 18px;
 }
 
-.name {
-  font-size: 1.4rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  margin-bottom: 2rem;
+/* brand title */
+.brand {
+  font-weight: 600;
+  font-size: clamp(22px, 2.6vw, 28px);
+  letter-spacing: 0.01em;
+  margin: 0;
 }
 
-.links {
+/* nav links */
+.nav {
   display: flex;
-  gap: 1.6rem;
+  gap: 18px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.links a {
-  color: var(--text);
+.nav a {
+  color: var(--ink);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
+  font-weight: 500;
+  font-size: 0.98rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: color .25s ease, background-color .25s ease, transform .2s ease;
 }
 
-.links a:hover {
-  color: var(--hover);
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--accent);
+  background: var(--panel);
+  transform: translateY(-1px);
+  outline: none;
 }
 
-.links.small {
-  margin-top: 2rem;
-  font-size: 0.9rem;
+.nav.small { margin-top: 6px; }
+
+/* divider line */
+.divider {
+  width: 220px;
+  height: 1px;
+  background: var(--line);
+  margin-top: 4px;
 }
 
-.content {
-  max-width: 480px;
-  color: #ccc;
-  font-weight: 300;
-  line-height: 1.6;
-  font-size: 0.95rem;
+/* supporting text */
+.subtle { color: var(--muted); font-size: .92rem; }
+
+/* paragraph copy */
+.copy {
+  max-width: 540px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-weight: 400;
+  margin: 6px 0 2px;
 }
 
-.project-list {
+/* bulleted list */
+.list {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  margin-bottom: 2rem;
-  color: #ccc;
-  font-weight: 300;
+  padding: 0;
+  margin: 12px 0 0;
+  color: var(--muted);
+  display: grid;
+  gap: 6px;
+  font-size: .96rem;
 }
 
-/* animations */
+/* project cards */
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: grid;
+  gap: 12px;
+  width: min(640px, 92vw);
+}
+
+.card {
+  background: linear-gradient(180deg, #1b1b1b, #191919);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  text-align: left;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+
+.card-title { font-weight: 600; margin: 0 0 4px; }
+.card-note { color: var(--muted); font-size: .95rem; }
+
+.card-links { display: flex; gap: 12px; margin-top: 10px; }
+.card-links a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  transition: color .25s ease, background-color .25s ease, transform .2s ease;
+}
+.card-links a:hover,
+.card-links a:focus-visible {
+  color: var(--accent);
+  background: var(--panel);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* vertical links for contact */
+.links-vertical {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 10px;
+}
+.links-vertical a {
+  color: var(--ink);
+  text-decoration: none;
+  transition: color .25s ease, background-color .25s ease;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.links-vertical a:hover,
+.links-vertical a:focus-visible {
+  color: var(--accent);
+  background: var(--panel);
+  outline: none;
+}
+
+/* enter fade */
+.fade { opacity: 0; animation: fadeIn .45s ease forwards; }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* cross-page fade */
-.fade {
-  opacity: 1;
-  transition: opacity 0.4s ease;
+/* exit fade used by script.js */
+.fade.exit {
+  opacity: 0 !important;
+  transition: opacity .25s ease;
 }
-.fade.exiting {
-  opacity: 0;
+
+/* small screens */
+@media (max-width: 480px) {
+  .nav { gap: 14px; }
 }
