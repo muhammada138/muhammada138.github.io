@@ -3,8 +3,8 @@
   --panel: #1f1f1f;
   --ink: #f1f1f1;
   --muted: #cfcfcf;
-  --line: rgba(255,255,255,0.06);
-  --accent: #e8e8e8; /* off-white hover accent */
+  --line: rgba(255,255,255,0.08);
+  --accent: #ececec; /* off-white hover accent */
 }
 
 * { box-sizing: border-box; }
@@ -28,7 +28,7 @@ body {
   gap: 18px;
 }
 
-/* brand title */
+/* main brand title */
 .brand {
   font-weight: 600;
   font-size: clamp(22px, 2.6vw, 28px);
@@ -64,60 +64,55 @@ body {
 
 .nav.small { margin-top: 6px; }
 
-/* divider line */
+/* section dividers */
 .divider {
-  width: 220px;
+  width: 260px;
   height: 1px;
   background: var(--line);
   margin-top: 4px;
 }
 
-/* supporting text */
-.subtle { color: var(--muted); font-size: .92rem; }
-
-/* paragraph copy */
+/* text blocks */
 .copy {
-  max-width: 540px;
+  max-width: 720px;
   color: var(--muted);
-  line-height: 1.7;
+  line-height: 1.75;
   font-weight: 400;
-  margin: 6px 0 2px;
+  margin: 8px auto;
+  font-size: 1rem;
 }
 
-/* bulleted list */
-.list {
-  list-style: none;
-  padding: 0;
-  margin: 12px 0 0;
+.eyebrow {
+  font-size: .9rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
   color: var(--muted);
-  display: grid;
-  gap: 6px;
-  font-size: .96rem;
+  margin: 8px 0 2px;
 }
 
-/* project cards */
+/* cards for projects */
 .cards {
   list-style: none;
   padding: 0;
   margin: 6px 0 0;
   display: grid;
   gap: 12px;
-  width: min(640px, 92vw);
+  width: min(720px, 92vw);
 }
 
 .card {
   background: linear-gradient(180deg, #1b1b1b, #191919);
   border: 1px solid var(--line);
   border-radius: 14px;
-  padding: 14px 16px;
+  padding: 16px 18px;
   text-align: left;
   box-shadow: 0 20px 40px rgba(0,0,0,.35);
 }
 
-.card-title { font-weight: 600; margin: 0 0 4px; }
-.card-note { color: var(--muted); font-size: .95rem; }
+.card-title { font-weight: 600; margin: 0 0 6px; }
+.card-note { color: var(--muted); font-size: .98rem; }
 
-.card-links { display: flex; gap: 12px; margin-top: 10px; }
+.card-links { display: flex; gap: 12px; margin-top: 12px; }
 .card-links a {
   color: var(--ink);
   text-decoration: none;
@@ -134,7 +129,7 @@ body {
   outline: none;
 }
 
-/* vertical links for contact */
+/* stacked links for contact */
 .links-vertical {
   list-style: none;
   padding: 0;
@@ -154,6 +149,13 @@ body {
   color: var(--accent);
   background: var(--panel);
   outline: none;
+}
+
+/* bottom quote */
+.quote q {
+  color: var(--muted);
+  font-style: italic;
+  font-weight: 300;
 }
 
 /* enter fade */
