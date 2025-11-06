@@ -39,7 +39,16 @@ body.is-transitioning {
 .name {
   font-weight: 500;
   font-size: 1.1rem;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
+
+.name:hover {
+  color: var(--accent);
+  font-style: italic;
+}
+
 
 .nav-top {
   display: flex;
@@ -187,3 +196,16 @@ a:hover {
   color: var(--accent); /* lighter hover color */
   font-style: italic;
 }
+.project-link {
+  margin-left: 10px;
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--accent);
+  font-style: italic;
+}
+
