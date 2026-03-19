@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    background-color: #f6f7fc;
+    color: #0d1124;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.dark body {
+    background-color: #06071a;
+    color: #dde0f0;
+  }
+}
+
+@layer components {
+  /* Sliding underline for prose links */
+  .underline-hover {
+    @apply relative inline-block;
+  }
+  .underline-hover::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-gold transition-all duration-300;
+  }
+  .underline-hover:hover::after {
+    @apply w-full;
+  }
+
+  /* Gold left border reveal on hover for project entries */
+  .border-reveal {
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s ease, padding-left 0.2s ease;
+  }
+  .border-reveal:hover {
+    border-left-color: #C89B3C;
+    padding-left: 0.75rem;
+  }
+}
