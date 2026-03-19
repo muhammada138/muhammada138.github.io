@@ -105,7 +105,7 @@ export default function HomeNav() {
           transition={{ duration: 0.5, delay: 0.07 }}
           className="text-[10px] tracking-[0.12em] uppercase mb-10 text-[#7a82a4] dark:text-[#4b5070]"
         >
-          Computer Science · University of Calgary
+          Computer Science
         </motion.p>
 
         {/* Nav — single continuous block, no divider */}
