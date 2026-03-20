@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 import MuteToggle from './MuteToggle';
 
-const DRIVE_EMBED = 'https://drive.google.com/file/d/1t7TC6VrpLjBYv1bLeaDoaUx38S8Kbdyo/preview';
-const DRIVE_LINK  = 'https://drive.google.com/file/d/1t7TC6VrpLjBYv1bLeaDoaUx38S8Kbdyo/view';
+const PDF_SRC  = '/resume.pdf';
 
 export default function ResumeContent() {
   return (
@@ -25,14 +24,13 @@ export default function ResumeContent() {
         </a>
         <div className="flex items-center gap-3">
           <a
-            href={DRIVE_LINK}
-            target="_blank"
-            rel="noreferrer"
+            href={PDF_SRC}
+            download
             className="text-[10px] text-[#7a82a4] dark:text-[#4b5070]
                        hover:text-[#0d1124] dark:hover:text-[#dde0f0]
                        transition-colors no-underline"
           >
-            open ↗
+            download ↓
           </a>
           <MuteToggle />
           <ThemeToggle />
@@ -48,10 +46,9 @@ export default function ResumeContent() {
         style={{ minHeight: '80vh' }}
       >
         <iframe
-          src={DRIVE_EMBED}
+          src={PDF_SRC}
           className="w-full h-full"
           style={{ minHeight: '80vh', border: 'none' }}
-          allow="autoplay"
           title="Resume"
         />
       </motion.div>

@@ -72,7 +72,7 @@ export default function HomeNav() {
   const anyHovered = hovered !== null;
   const dim = (id: string) => ({
     opacity: anyHovered && hovered !== id ? 0.15 : 1,
-    transition: 'opacity 0.15s ease',
+    transition: 'opacity 0.22s ease',
   });
 
   const linkClass = `text-[12px] text-[#0d1124] dark:text-[#dde0f0] no-underline
@@ -123,6 +123,8 @@ export default function HomeNav() {
                   key="email"
                   variants={row}
                   style={dim('email')}
+                  whileHover={{ x: 5 }}
+                  transition={{ x: { type: 'spring', stiffness: 500, damping: 30 } }}
                   onMouseEnter={() => { setHovered('email'); playHoverSound(); }}
                   className="group flex items-center gap-3 w-fit cursor-default"
                 >
@@ -153,6 +155,8 @@ export default function HomeNav() {
                 href={href!}
                 variants={row}
                 style={dim(label)}
+                whileHover={{ x: 5 }}
+                transition={{ x: { type: 'spring', stiffness: 500, damping: 30 } }}
                 target={external ? '_blank' : undefined}
                 rel={external ? 'noreferrer' : undefined}
                 onMouseEnter={() => { setHovered(label); playHoverSound(); }}
