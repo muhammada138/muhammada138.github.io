@@ -21,6 +21,3 @@ npm run dev
 
 Automatically deploys to GitHub Pages via GitHub Actions on every push to `main`.
 
-## License
-
-MIT
