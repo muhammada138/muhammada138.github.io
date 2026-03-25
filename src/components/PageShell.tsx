@@ -5,12 +5,13 @@ interface Props {
   children: React.ReactNode;
   backHref?: string;
   backLabel?: string;
+  wide?: boolean;
 }
 
-export default function PageShell({ children, backHref = '/', backLabel = 'back' }: Props) {
+export default function PageShell({ children, backHref = '/', backLabel = 'back', wide = false }: Props) {
   return (
     <div className="w-full min-h-screen flex items-center justify-center px-6">
-      <div className="w-full max-w-[460px] py-16">
+      <div className={`w-full ${wide ? 'max-w-[640px]' : 'max-w-[460px]'} py-16`}>
 
         <motion.header
           initial={{ opacity: 0 }}

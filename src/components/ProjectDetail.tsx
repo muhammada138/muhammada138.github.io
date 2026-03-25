@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PageShell from './PageShell';
 import type { Project } from '../data/projects';
@@ -21,23 +21,11 @@ export default function ProjectDetail({ project }: Props) {
   const images = project.images ?? [];
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [lightbox, setLightbox] = useState(false);
 
   function go(next: number) {
     setDirection(next > index ? 1 : -1);
     setIndex(next);
   }
-
-  useEffect(() => {
-    if (!lightbox) return;
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setLightbox(false);
-      if (e.key === 'ArrowRight') go((index + 1) % images.length);
-      if (e.key === 'ArrowLeft') go((index - 1 + images.length) % images.length);
-    }
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [lightbox, index, images.length]);
 
   const slideVariants = {
     enter:  (d: number) => ({ x: d * 24, opacity: 0 }),
@@ -46,7 +34,7 @@ export default function ProjectDetail({ project }: Props) {
   };
 
   return (
-    <PageShell backHref="/projects" backLabel="projects">
+    <PageShell backHref="/projects" backLabel="projects" wide>
       {/* Label */}
       <motion.p
         initial={{ opacity: 0 }}
@@ -93,8 +81,7 @@ export default function ProjectDetail({ project }: Props) {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                onClick={() => setLightbox(true)}
-                className="w-full h-full object-cover cursor-zoom-in"
+                className="w-full h-full object-cover"
               />
             </AnimatePresence>
 
@@ -222,78 +209,6 @@ export default function ProjectDetail({ project }: Props) {
           </p>
         </div>
       </motion.div>
-
-      {/* Lightbox */}
-      <AnimatePresence>
-        {lightbox && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setLightbox(false)}
-            className="fixed inset-0 z-50 flex items-center justify-center
-                       bg-black/90 backdrop-blur-sm p-4"
-          >
-            <AnimatePresence initial={false} custom={direction} mode="popLayout">
-              <motion.img
-                key={index}
-                src={images[index]}
-                alt={`${project.title} screenshot ${index + 1}`}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                onClick={(e) => e.stopPropagation()}
-                className="max-w-full max-h-full object-contain rounded-sm cursor-zoom-out"
-                style={{ maxHeight: 'calc(100vh - 80px)' }}
-              />
-            </AnimatePresence>
-
-            {images.length > 1 && (
-              <>
-                <button
-                  onClick={(e) => { e.stopPropagation(); go((index - 1 + images.length) % images.length); }}
-                  className="absolute left-4 top-1/2 -translate-y-1/2
-                             text-white/50 hover:text-white
-                             transition-colors duration-150 text-[24px] leading-none"
-                >
-                  ←
-                </button>
-                <button
-                  onClick={(e) => { e.stopPropagation(); go((index + 1) % images.length); }}
-                  className="absolute right-4 top-1/2 -translate-y-1/2
-                             text-white/50 hover:text-white
-                             transition-colors duration-150 text-[24px] leading-none"
-                >
-                  →
-                </button>
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  {images.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={(e) => { e.stopPropagation(); go(i); }}
-                      className={`w-1.5 h-1.5 rounded-full transition-colors duration-150 ${
-                        i === index ? 'bg-white' : 'bg-white/30'
-                      }`}
-                    />
-                  ))}
-                </div>
-              </>
-            )}
-
-            <button
-              onClick={() => setLightbox(false)}
-              className="absolute top-4 right-4 text-white/50 hover:text-white
-                         transition-colors duration-150 text-[20px] leading-none"
-            >
-              ✕
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </PageShell>
   );
 }
