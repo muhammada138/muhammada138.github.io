@@ -107,19 +107,34 @@ export default function ProjectDetail({ project }: Props) {
         </div>
       </motion.div>
 
-      {/* GitHub link */}
-      <motion.a
-        href={project.github}
-        target="_blank"
-        rel="noreferrer"
+      {/* Links */}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.45 }}
-        className="text-[11px] no-underline text-[#7a82a4] dark:text-[#4b5070]
-                   hover:text-gold transition-colors duration-150"
+        className="flex items-center gap-5"
       >
-        view on github ↗
-      </motion.a>
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[11px] no-underline text-[#7a82a4] dark:text-[#4b5070]
+                     hover:text-gold transition-colors duration-150"
+        >
+          view on github ↗
+        </a>
+        {project.live && (
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noreferrer"
+            className="text-[11px] no-underline text-[#7a82a4] dark:text-[#4b5070]
+                       hover:text-gold transition-colors duration-150"
+          >
+            live site ↗
+          </a>
+        )}
+      </motion.div>
     </PageShell>
   );
 }

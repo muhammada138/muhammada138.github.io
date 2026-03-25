@@ -2,6 +2,7 @@ export type Project = {
   slug: string;
   title: string;
   github: string;
+  live?: string;
   meta: string;
   tagline: string;
   desc: string;
@@ -41,6 +42,23 @@ export const projects: Project[] = [
       'Deployed on a Raspberry Pi for always-on availability.',
     ],
     tech: ['Python', 'discord.py', 'Riot API'],
+    status: 'Complete',
+  },
+  {
+    slug: 'clarity-finance-tracker',
+    title: 'Clarity Finance Tracker',
+    github: 'https://github.com/muhammada138/clarity-finance-tracker',
+    live: 'https://clarity-finance-tracker.netlify.app',
+    meta: 'React · FastAPI · Plaid · Groq · Python',
+    tagline: 'Your bank account, finally explained.',
+    desc: 'AI-powered personal finance tracker that connects to your bank via Plaid and uses an LLM to categorize spending and surface insights.',
+    overview: [
+      'Connects to real bank accounts through Plaid Link — retrieves live transaction history.',
+      'LLM (Llama 3.3 70B via Groq) automatically categorizes transactions and generates spending breakdowns.',
+      'Dashboard with spending visualization charts and a chat interface for querying your finances.',
+      'React + Vite frontend backed by a FastAPI Python server.',
+    ],
+    tech: ['React', 'Python', 'FastAPI', 'Plaid API', 'Groq', 'Vite'],
     status: 'Complete',
   },
   {
