@@ -3,6 +3,7 @@ export type Project = {
   title: string;
   github: string;
   live?: string;
+  images?: string[];
   meta: string;
   tagline: string;
   desc: string;
@@ -49,6 +50,7 @@ export const projects: Project[] = [
     title: 'Clarity Finance Tracker',
     github: 'https://github.com/muhammada138/clarity-finance-tracker',
     live: 'https://clarity-finance-tracker.netlify.app',
+    images: ['/clarity-1.png', '/clarity-2.png'],
     meta: 'React · FastAPI · Plaid · Groq · Python',
     tagline: 'Your bank account, finally explained.',
     desc: 'AI-powered personal finance tracker that connects to your bank via Plaid and uses an LLM to categorize spending and surface insights.',

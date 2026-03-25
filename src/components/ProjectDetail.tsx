@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import PageShell from './PageShell';
 import type { Project } from '../data/projects';
 
@@ -17,6 +18,15 @@ interface Props {
 }
 
 export default function ProjectDetail({ project }: Props) {
+  const images = project.images ?? [];
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  function go(next: number) {
+    setDirection(next > index ? 1 : -1);
+    setIndex(next);
+  }
+
   return (
     <PageShell backHref="/projects" backLabel="projects">
       {/* Label */}
@@ -44,18 +54,109 @@ export default function ProjectDetail({ project }: Props) {
         </p>
       </motion.div>
 
-      {/* Image placeholder */}
+      {/* Screenshot area */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className="w-full aspect-video rounded-sm mb-10
-                   bg-[#0d1124]/4 dark:bg-[#dde0f0]/4
-                   flex items-center justify-center"
+        className="mb-4"
       >
-        <span className="text-[10px] tracking-[0.1em] uppercase text-[#7a82a4] dark:text-[#4b5070]">
-          screenshot coming soon
-        </span>
+        {images.length > 0 ? (
+          <div className="relative w-full aspect-video rounded-sm overflow-hidden
+                          bg-[#0d1124]/4 dark:bg-[#dde0f0]/4">
+            <AnimatePresence initial={false} custom={direction} mode="popLayout">
+              <motion.img
+                key={index}
+                src={images[index]}
+                alt={`${project.title} screenshot ${index + 1}`}
+                custom={direction}
+                variants={{
+                  enter:  (d) => ({ x: d * 24, opacity: 0 }),
+                  center: { x: 0, opacity: 1 },
+                  exit:   (d) => ({ x: d * -24, opacity: 0 }),
+                }}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                className="w-full h-full object-cover"
+              />
+            </AnimatePresence>
+
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={() => go((index - 1 + images.length) % images.length)}
+                  className="absolute left-2 top-1/2 -translate-y-1/2
+                             text-[#7a82a4] dark:text-[#4b5070]
+                             hover:text-[#0d1124] dark:hover:text-[#dde0f0]
+                             transition-colors duration-150 text-[16px] leading-none"
+                >
+                  ←
+                </button>
+                <button
+                  onClick={() => go((index + 1) % images.length)}
+                  className="absolute right-2 top-1/2 -translate-y-1/2
+                             text-[#7a82a4] dark:text-[#4b5070]
+                             hover:text-[#0d1124] dark:hover:text-[#dde0f0]
+                             transition-colors duration-150 text-[16px] leading-none"
+                >
+                  →
+                </button>
+                <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+                  {images.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => go(i)}
+                      className={`w-1 h-1 rounded-full transition-colors duration-150 ${
+                        i === index
+                          ? 'bg-[#0d1124] dark:bg-[#dde0f0]'
+                          : 'bg-[#7a82a4] dark:bg-[#4b5070]'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        ) : (
+          <div className="w-full aspect-video rounded-sm
+                          bg-[#0d1124]/4 dark:bg-[#dde0f0]/4
+                          flex items-center justify-center">
+            <span className="text-[10px] tracking-[0.1em] uppercase text-[#7a82a4] dark:text-[#4b5070]">
+              screenshot coming soon
+            </span>
+          </div>
+        )}
+      </motion.div>
+
+      {/* Links */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.15 }}
+        className="flex items-center gap-5 mb-10"
+      >
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noreferrer"
+          className="text-[11px] no-underline text-[#7a82a4] dark:text-[#4b5070]
+                     hover:text-gold transition-colors duration-150"
+        >
+          view on github ↗
+        </a>
+        {project.live && (
+          <a
+            href={project.live}
+            target="_blank"
+            rel="noreferrer"
+            className="text-[11px] no-underline text-[#7a82a4] dark:text-[#4b5070]
+                       hover:text-gold transition-colors duration-150"
+          >
+            live site ↗
+          </a>
+        )}
       </motion.div>
 
       {/* Overview */}
@@ -107,34 +208,6 @@ export default function ProjectDetail({ project }: Props) {
         </div>
       </motion.div>
 
-      {/* Links */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.45 }}
-        className="flex items-center gap-5"
-      >
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noreferrer"
-          className="text-[11px] no-underline text-[#7a82a4] dark:text-[#4b5070]
-                     hover:text-gold transition-colors duration-150"
-        >
-          view on github ↗
-        </a>
-        {project.live && (
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noreferrer"
-            className="text-[11px] no-underline text-[#7a82a4] dark:text-[#4b5070]
-                       hover:text-gold transition-colors duration-150"
-          >
-            live site ↗
-          </a>
-        )}
-      </motion.div>
     </PageShell>
   );
 }
