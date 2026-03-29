@@ -89,7 +89,7 @@ export default function ProjectDetail({ project }: Props) {
         className="mb-3"
       >
         {images.length > 0 ? (
-          <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden
+          <div className="relative w-full aspect-video rounded-sm overflow-hidden
                           bg-[#0d1124]/4 dark:bg-[#dde0f0]/4">
             <AnimatePresence initial={false} custom={direction} mode="popLayout">
               <motion.img
@@ -144,7 +144,7 @@ export default function ProjectDetail({ project }: Props) {
             )}
           </div>
         ) : (
-          <div className="w-full aspect-[4/3] rounded-sm
+          <div className="w-full aspect-video rounded-sm
                           bg-[#0d1124]/4 dark:bg-[#dde0f0]/4
                           flex items-center justify-center">
             <span className="text-[10px] tracking-[0.1em] uppercase text-[#7a82a4] dark:text-[#4b5070]">

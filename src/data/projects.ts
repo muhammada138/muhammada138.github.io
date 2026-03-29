@@ -10,9 +10,10 @@ export type Project = {
   overview: string[];
   tech: string[];
   status: string;
+  hidden?: boolean;
 };
 
-export const projects: Project[] = [
+const allProjects: Project[] = [
   {
     slug: 'league-coach',
     title: 'Rift IQ',
@@ -48,6 +49,21 @@ export const projects: Project[] = [
     status: 'Complete',
   },
   {
+    slug: 'study-dashboard',
+    title: 'Study Dashboard (WIP)',
+    github: 'https://github.com/muhammada138/study-dashboard',
+    meta: 'Vanilla JS · localStorage',
+    tagline: 'A personal corner of the browser.',
+    desc: 'Minimal personal productivity dashboard with notes, todos, and progress tracking in a single offline tab. No server, no login, no setup.',
+    overview: [
+      'Study Dashboard started as a replacement for the browser new tab page. One place for notes, todos, and a progress tracker that opens instantly and does not require signing into anything. No app to install, no account to create, nothing running in the background.',
+      'All data lives in localStorage, so it survives browser restarts and works completely offline. Nothing leaves the device. For a tool used on a single machine every day, adding a backend and sync layer would just be extra friction with no real benefit.',
+      'The interface is keyboard-first with shortcuts for common actions and a minimal layout that stays out of the way. It is built in vanilla JavaScript with no build tools. Open the file in a browser and it works.',
+    ],
+    tech: ['JavaScript', 'HTML', 'CSS', 'localStorage'],
+    status: 'In Progress',
+  },
+  {
     slug: 'pathfinding-visualizer',
     title: 'Pathfinding Visualizer',
     github: 'https://github.com/muhammada138/pathfinding-visualizer',
@@ -61,6 +77,7 @@ export const projects: Project[] = [
     ],
     tech: ['JavaScript', 'HTML', 'CSS'],
     status: 'Complete',
+    hidden: true,
   },
   {
     slug: 'league-stats-bot',
@@ -76,20 +93,8 @@ export const projects: Project[] = [
     ],
     tech: ['Python', 'discord.py', 'Riot API'],
     status: 'Complete',
-  },
-  {
-    slug: 'study-dashboard',
-    title: 'Study Dashboard',
-    github: 'https://github.com/muhammada138/study-dashboard',
-    meta: 'Vanilla JS · localStorage',
-    tagline: 'A personal corner of the browser.',
-    desc: 'Minimal personal productivity dashboard with notes, todos, and progress tracking in a single offline tab. No server, no login, no setup.',
-    overview: [
-      'Study Dashboard started as a replacement for the browser new tab page. One place for notes, todos, and a progress tracker that opens instantly and does not require signing into anything. No app to install, no account to create, nothing running in the background.',
-      'All data lives in localStorage, so it survives browser restarts and works completely offline. Nothing leaves the device. For a tool used on a single machine every day, adding a backend and sync layer would just be extra friction with no real benefit.',
-      'The interface is keyboard-first with shortcuts for common actions and a minimal layout that stays out of the way. It is built in vanilla JavaScript with no build tools. Open the file in a browser and it works.',
-    ],
-    tech: ['JavaScript', 'HTML', 'CSS', 'localStorage'],
-    status: 'Complete',
+    hidden: true,
   },
 ];
+
+export const projects = allProjects.filter(p => !p.hidden);
