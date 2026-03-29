@@ -20,12 +20,11 @@ export default function PageShell({ children, backHref = '/', backLabel = 'back'
           className="flex items-center justify-between mb-14"
         >
           <a
-            href="/"
-            className="text-[12px] font-medium tracking-tight no-underline
-                       text-[#0d1124] dark:text-[#dde0f0]
-                       hover:text-gold dark:hover:text-gold transition-colors duration-150"
+            href={backHref}
+            className="text-[12px] no-underline text-[#7a82a4] dark:text-[#4b5070]
+                       hover:text-[#0d1124] dark:hover:text-[#dde0f0] transition-colors duration-150"
           >
-            Muhammad Abdullah
+            ← {backLabel}
           </a>
           <ThemeToggle />
         </motion.header>
@@ -37,21 +36,6 @@ export default function PageShell({ children, backHref = '/', backLabel = 'back'
         >
           {children}
         </motion.main>
-
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.35 }}
-          className="mt-14"
-        >
-          <a
-            href={backHref}
-            className="text-[10px] no-underline text-[#7a82a4] dark:text-[#4b5070]
-                       hover:text-[#0d1124] dark:hover:text-[#dde0f0] transition-colors duration-150"
-          >
-            ← {backLabel}
-          </a>
-        </motion.footer>
 
       </div>
     </div>
