@@ -17,6 +17,7 @@ export const projects: Project[] = [
     slug: 'league-coach',
     title: 'Rift IQ',
     github: 'https://github.com/muhammada138/league-coach',
+    live: 'https://league-coach.vercel.app/',
     images: ['/league-coach-1.png', '/league-coach-2.png', '/league-coach-3.png'],
     meta: 'React · FastAPI · Riot API · Groq · Python',
     tagline: 'Coaching grounded in your actual games, not global averages.',

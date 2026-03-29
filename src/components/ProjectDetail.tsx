@@ -101,7 +101,7 @@ export default function ProjectDetail({ project }: Props) {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setLightbox(true)}
                 className="w-full h-full object-cover cursor-zoom-in"
               />
@@ -253,7 +253,7 @@ export default function ProjectDetail({ project }: Props) {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 onClick={(e) => e.stopPropagation()}
                 className="max-w-full max-h-full object-contain rounded-sm cursor-zoom-out"
                 style={{ maxHeight: 'calc(100vh - 80px)' }}
