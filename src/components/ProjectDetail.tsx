@@ -191,9 +191,9 @@ export default function ProjectDetail({ project }: Props) {
           <motion.p
             key={i}
             variants={line}
-            className="text-[13px] leading-[1.75] text-[#1e2340] dark:text-[#dde0f0] mb-2"
+            className="text-[13px] leading-[1.75] text-[#1e2340] dark:text-[#dde0f0] mb-4"
           >
-            — {point}
+            {point}
           </motion.p>
         ))}
       </motion.div>
