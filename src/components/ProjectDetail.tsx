@@ -39,6 +39,15 @@ export default function ProjectDetail({ project }: Props) {
     return () => window.removeEventListener('keydown', onKey);
   }, [lightbox, index, images.length]);
 
+  useEffect(() => {
+    if (images.length <= 1 || lightbox) return;
+    const timer = setInterval(() => {
+      setDirection(1);
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length, lightbox, index]);
+
   const slideVariants = {
     enter:  (d: number) => ({ x: d * 24, opacity: 0 }),
     center: { x: 0, opacity: 1 },
