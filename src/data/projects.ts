@@ -14,6 +14,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'league-coach',
+    title: 'League Coach',
+    github: 'https://github.com/muhammada138/league-coach',
+    images: ['/league-coach-1.png', '/league-coach-2.png'],
+    meta: 'React · FastAPI · Riot API · Python',
+    tagline: 'Your League stats, actually useful.',
+    desc: 'Full-stack League of Legends analytics dashboard with AI-powered coaching insights, live game tracking, and win prediction.',
+    overview: [
+      'Fetches match history via the Riot Games API and surfaces per-game breakdowns with KDA, CS, vision, and damage stats.',
+      'AI coach (Claude) analyzes recent performance and generates personalized improvement tips.',
+      'Live game scoreboard with real-time rank lookups and a 5-factor win probability model.',
+      'React + Vite frontend backed by a FastAPI Python server with TTL caching and rate-limit handling.',
+    ],
+    tech: ['React', 'Python', 'FastAPI', 'Riot API', 'Claude API', 'Vite'],
+    status: 'In Progress',
+  },
+  {
     slug: 'clarity-finance-tracker',
     title: 'Clarity Finance Tracker',
     github: 'https://github.com/muhammada138/clarity-finance-tracker',
