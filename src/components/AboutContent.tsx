@@ -38,7 +38,7 @@ export default function AboutContent() {
         <p className="text-[13px] leading-[1.85] text-[#5a6280] dark:text-[#6b7090]">
           I am curious about systems, design, and the small details that shape structure.
           I like seeing how lines of code form patterns and how those patterns evolve into
-          something larger. That curiosity led me to programming — testing and refining
+          something larger. That curiosity led me to programming - testing and refining
           until things feel right.
         </p>
 
@@ -48,7 +48,7 @@ export default function AboutContent() {
 
         <p className="text-[13px] leading-[1.85] text-[#5a6280] dark:text-[#6b7090]">
           Outside of computing I have always been drawn to space. I find a sense of calm
-          and awe in learning about the universe — particularly{' '}
+          and awe in learning about the universe - particularly{' '}
           <a href="https://en.wikipedia.org/wiki/General_relativity" target="_blank" rel="noreferrer"
             className="text-[#0d1124] dark:text-[#dde0f0] border-b border-[#0d1124]/20 dark:border-[#dde0f0]/20 hover:text-gold hover:border-gold transition-colors no-underline">
             general relativity
@@ -61,7 +61,7 @@ export default function AboutContent() {
         </p>
 
         <p className="text-[13px] leading-[1.85] text-[#5a6280] dark:text-[#6b7090]">
-          I am especially drawn to black holes —{' '}
+          I am especially drawn to black holes -{' '}
           <a href="https://en.wikipedia.org/wiki/Sagittarius_A*" target="_blank" rel="noreferrer"
             className="text-[#0d1124] dark:text-[#dde0f0] border-b border-[#0d1124]/20 dark:border-[#dde0f0]/20 hover:text-gold hover:border-gold transition-colors no-underline">
             Sgr A*

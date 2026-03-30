@@ -108,7 +108,7 @@ export default function HomeNav() {
           Computer Science
         </motion.p>
 
-        {/* Nav — single continuous block, no divider */}
+        {/* Nav - single continuous block, no divider */}
         <motion.nav
           variants={container}
           initial="hidden"
