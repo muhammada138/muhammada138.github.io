@@ -32,6 +32,23 @@ const allProjects: Project[] = [
     status: 'In Progress',
   },
   {
+    slug: 'marquee-movie-recommender',
+    title: 'Marquee',
+    github: 'https://github.com/muhammada138/movie-recommender',
+    live: 'https://cf-movie-recommender.streamlit.app/',
+    images: ['/marquee-1.png', '/marquee-2.png', '/marquee-3.png'],
+    meta: 'Python · Streamlit · Scikit-Learn · Pandas · TMDB API',
+    tagline: 'Fundamental ML meets rich metadata.',
+    desc: 'Intelligent movie discovery engine that combines collaborative filtering with a hybrid content-based matching system powered by 9,000+ TMDB keywords and Gaussian temporal decay.',
+    overview: [
+      'Marquee was built to solve a specific problem: most recommendation tools feel like "black boxes" or surface-level API wrappers. This project implements actual collaborative and content-based filtering algorithms from scratch on the MovieLens 100k dataset, then layers on modern features like live poster fetching and streaming availability.',
+      'The recommendation engine uses a dual-logic approach. For users with existing ratings, it computes a 610x610 similarity matrix (using SVD and Cosine Similarity) to find taste neighbors. For new discoveries, it uses a hybrid TF-IDF model that blends broad genres with over 9,000 highly specific TMDB keywords. A Gaussian decay function also penalizes movies outside the user\'s preferred release era, ensuring the context remains relevant.',
+      'The UI is a custom glassmorphic dark-theme dashboard that manages a "movie pool" for multi-input recommendations. It features real-time fuzzy search with live poster previews, IMDb deep-links, and dynamically fetched US streaming providers, all deployed through Streamlit Cloud.',
+    ],
+    tech: ['Python', 'Streamlit', 'Scikit-Learn', 'Pandas', 'TMDB API', 'NumPy'],
+    status: 'Complete',
+  },
+  {
     slug: 'clarity-finance-tracker',
     title: 'Clarity Finance Tracker',
     github: 'https://github.com/muhammada138/clarity-finance-tracker',
