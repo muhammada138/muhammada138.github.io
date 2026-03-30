@@ -35,7 +35,7 @@ const allProjects: Project[] = [
     slug: 'clarity-finance-tracker',
     title: 'Clarity Finance Tracker',
     github: 'https://github.com/muhammada138/clarity-finance-tracker',
-    live: 'https://clarity-finance-tracker.netlify.app',
+    live: 'https://clarity-finance-tracker.vercel.app',
     images: ['/clarity-1.png', '/clarity-2.png'],
     meta: 'React · FastAPI · Plaid · Groq · Python',
     tagline: 'Connect your bank. Ask it anything.',
@@ -43,7 +43,7 @@ const allProjects: Project[] = [
     overview: [
       'Clarity connects to your bank through Plaid Link, so there is no manual entry or CSV uploading. Once linked it pulls your full transaction history and runs each transaction through LLaMA 3.3 70B on Groq to categorize it automatically. The result is a dashboard with a spending breakdown by category, sortable transaction tables, and stat cards that update based on your real accounts.',
       'The chat interface is what makes it actually useful. Instead of trying to read charts and do the math yourself, you can just ask: how much did I spend on food last month, what is my biggest category this week, am I spending more than last month. The model has your actual transaction data so it answers about your specific history, not some generic budgeting template.',
-      'Session state persists across refreshes so you stay logged in and your analysis does not disappear. The backend runs on FastAPI deployed to Render and the frontend is React 18 with Vite, hosted on Netlify.',
+      'Session state persists across refreshes so you stay logged in and your analysis does not disappear. The backend runs on FastAPI deployed to an Oracle Cloud VM with automated deploys via GitHub Actions, and the frontend is React 18 with Vite, hosted on Vercel.',
     ],
     tech: ['React', 'Python', 'FastAPI', 'Plaid API', 'Groq', 'Vite', 'Recharts'],
     status: 'Complete',
