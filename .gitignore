@@ -17,3 +17,8 @@ Thumbs.db
 # Editor
 .vscode/
 .idea/
+
+# Planning and Tasks
+implementation_plan.md
+task.md
+walkthrough.md
