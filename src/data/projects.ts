@@ -24,6 +24,7 @@ const allProjects: Project[] = [
       '/space-mission-tracker-3.png',
       '/space-mission-tracker-4.png',
       '/space-mission-tracker-5.png',
+      '/space-mission-tracker-6.png',
     ],
     meta: 'React · Django · PostgreSQL · WebGL · Launch Library 2 · SpaceX API',
     tagline: 'Mission control for everyone.',
