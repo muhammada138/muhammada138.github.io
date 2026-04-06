@@ -15,6 +15,28 @@ export type Project = {
 
 const allProjects: Project[] = [
   {
+    slug: 'space-mission-tracker',
+    title: 'Space Mission Tracker',
+    github: 'https://github.com/muhammada138/space-mission-tracker',
+    images: [
+      '/space-mission-tracker-1.png',
+      '/space-mission-tracker-2.png',
+      '/space-mission-tracker-3.png',
+      '/space-mission-tracker-4.png',
+      '/space-mission-tracker-5.png',
+    ],
+    meta: 'React · Django · PostgreSQL · WebGL · Launch Library 2 · SpaceX API',
+    tagline: 'Mission control for everyone.',
+    desc: 'Full-stack space launch tracker with a 3D interactive globe, real-time ISS tracking, personal watchlists, and live data from Launch Library 2 and the SpaceX API — all wrapped in a deep-navy mission control aesthetic.',
+    overview: [
+      'Space Mission Tracker is built around the idea that tracking rocket launches should feel like sitting in mission control, not reading a spreadsheet. The platform pulls live data from Launch Library 2 and the SpaceX API, covering over 1,000 historical launches since 2022, and keeps it fresh with an intelligent caching layer — 2-hour TTL for LL2, 30 minutes for SpaceX, with automatic fallback to stale data if the upstream APIs go down.',
+      'The standout feature is the visualization layer. There is an interactive 3D launch globe built in WebGL with trigonometric coordinate mapping that plots launch sites across the planet. A real-time ISS tracker renders the station\'s current position with 3D interpolation, and a horizontal launch timeline with logarithmic spacing lets you scan the full history without everything collapsing into a line.',
+      'Authenticated users get a personal layer on top of all of this: watchlists, mission logs, browser notifications at 30 minutes and 5 minutes before a launch, and exportable share cards. The backend is Django with Django REST Framework and JWT auth, backed by PostgreSQL in production. The frontend is React and Vite with Tailwind CSS and a CSS starfield that makes the whole thing feel like the space nerd app it is.',
+    ],
+    tech: ['React', 'Django', 'PostgreSQL', 'WebGL', 'Tailwind CSS', 'JWT', 'Launch Library 2', 'SpaceX API', 'Vite'],
+    status: 'Complete',
+  },
+  {
     slug: 'league-coach',
     title: 'Rift IQ',
     github: 'https://github.com/muhammada138/league-coach',
