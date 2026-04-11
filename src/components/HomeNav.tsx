@@ -27,9 +27,11 @@ export default function HomeNav() {
   const [hovered, setHovered] = useState<string | null>(null);
   const [emailLabel, setEmailLabel] = useState('email');
   const [calgaryTime, setCalgaryTime] = useState('--:--');
+  const [mounted, setMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    setMounted(true);
     function tick() {
       setCalgaryTime(
         new Date().toLocaleTimeString('en-CA', {
@@ -161,7 +163,7 @@ export default function HomeNav() {
             className="w-[4px] h-[4px] rounded-full flex-shrink-0"
             style={{ background: '#C89B3C', opacity: 0.55 }}
           />
-          <span>{calgaryTime} · Calgary, AB</span>
+          <span className="tabular-nums">{mounted ? calgaryTime : '--:--'} · Calgary, AB</span>
         </motion.footer>
 
       </div>

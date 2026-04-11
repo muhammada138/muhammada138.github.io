@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 
 export default function MuteToggle() {
   const [muted, setMuted] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     setMuted(localStorage.getItem('muted') === 'true');
   }, []);
 
@@ -12,6 +14,8 @@ export default function MuteToggle() {
     setMuted(next);
     localStorage.setItem('muted', String(next));
   }
+
+  if (!mounted) return null;
 
   return (
     <button
