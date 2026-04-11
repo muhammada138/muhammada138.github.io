@@ -34,7 +34,7 @@ const allProjects: Project[] = [
       'The standout feature is the visualization layer. There is an interactive 3D launch globe built in WebGL with trigonometric coordinate mapping that plots launch sites across the planet. A real-time ISS tracker renders the station\'s current position with 3D interpolation, and a horizontal launch timeline with logarithmic spacing lets you scan the full history without everything collapsing into a line.',
       'Authenticated users get a personal layer on top of all of this: watchlists, mission logs, browser notifications at 30 minutes and 5 minutes before a launch, and exportable share cards. The backend is Django with Django REST Framework and JWT auth, backed by PostgreSQL in production. The frontend is React and Vite with Tailwind CSS and a CSS starfield that makes the whole thing feel like the space nerd app it is.',
     ],
-    tech: ['React', 'Django', 'PostgreSQL', 'WebGL', 'Tailwind CSS', 'JWT', 'Launch Library 2', 'SpaceX API', 'Vite'],
+    tech: ['React', 'Django', 'PostgreSQL', 'WebGL', 'Three.js', 'Tailwind CSS', 'JWT', 'Launch Library 2', 'SpaceX API', 'Vite', 'Django REST Framework'],
     status: 'Complete',
   },
   {
@@ -51,8 +51,8 @@ const allProjects: Project[] = [
       'The coaching pipeline fetches your last 10 ranked games in parallel, scores each one by ranking you within the 10-player lobby on a 0 to 100 scale, then figures out which lane most consistently outperformed you across recent games. All of that gets packaged into a structured prompt and sent to LLaMA 3.3 70B on Groq with a system prompt that keeps the tips specific and actionable. No generic advice about warding more. It talks about your games.',
       'The app also has a live game scoreboard, real-time rank lookups, an LP trend graph built from recent results, and a win prediction model. There is an in-app chat for follow-up questions, bookmarked profiles for quick access, and the whole thing runs on an async FastAPI backend with TTL caching to stay within Riot\'s rate limits.',
     ],
-    tech: ['React', 'Python', 'FastAPI', 'Riot API', 'Groq', 'Vite', 'Tailwind CSS'],
-    status: 'In Progress',
+    tech: ['React', 'Python', 'FastAPI', 'Riot API', 'Groq', 'Vite', 'Tailwind CSS', 'React Router', 'Pydantic'],
+    status: 'Complete',
   },
   {
     slug: 'marquee-movie-recommender',
@@ -68,7 +68,7 @@ const allProjects: Project[] = [
       'The recommendation engine uses a dual-logic approach. For users with existing ratings, it computes a 610x610 similarity matrix (using SVD and Cosine Similarity) to find taste neighbors. For new discoveries, it uses a hybrid TF-IDF model that blends broad genres with over 9,000 highly specific TMDB keywords. A Gaussian decay function also penalizes movies outside the user\'s preferred release era, ensuring the context remains relevant.',
       'The UI is a custom glassmorphic dark-theme dashboard that manages a "movie pool" for multi-input recommendations. It features real-time fuzzy search with live poster previews, IMDb deep-links, and dynamically fetched US streaming providers, all deployed through Streamlit Cloud.',
     ],
-    tech: ['Python', 'Streamlit', 'Scikit-Learn', 'Pandas', 'TMDB API', 'NumPy'],
+    tech: ['Python', 'Streamlit', 'Scikit-Learn', 'Pandas', 'TMDB API', 'NumPy', 'Requests'],
     status: 'Complete',
   },
   {
@@ -85,7 +85,7 @@ const allProjects: Project[] = [
       'The chat interface is what makes it actually useful. Instead of trying to read charts and do the math yourself, you can just ask: how much did I spend on food last month, what is my biggest category this week, am I spending more than last month. The model has your actual transaction data so it answers about your specific history, not some generic budgeting template.',
       'Session state persists across refreshes so you stay logged in and your analysis does not disappear. The backend runs on FastAPI deployed to an Oracle Cloud VM with automated deploys via GitHub Actions, and the frontend is React 18 with Vite, hosted on Vercel.',
     ],
-    tech: ['React', 'Python', 'FastAPI', 'Plaid API', 'Groq', 'Vite', 'Recharts'],
+    tech: ['React', 'Python', 'FastAPI', 'Plaid API', 'Groq', 'Vite', 'Recharts', 'Tailwind CSS', 'Pydantic'],
     status: 'Complete',
   },
   {

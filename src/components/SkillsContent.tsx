@@ -1,12 +1,13 @@
 import PageShell from './PageShell';
 
 const skills = [
-  { name: 'HTML / CSS',   level: 'Lv.7' },
-  { name: 'JavaScript',   level: 'Lv.6' },
-  { name: 'Python',       level: 'Lv.5' },
-  { name: 'Algorithms',   level: 'Lv.5' },
-  { name: 'C / C++',      level: 'Lv.4' },
-  { name: 'Git',          level: 'Lv.4' },
+  { name: 'React / Next.js', level: 'Lv.7' },
+  { name: 'JavaScript / TS', level: 'Lv.7' },
+  { name: 'Python / FastAPI', level: 'Lv.6' },
+  { name: 'Django / Postgres', level: 'Lv.6' },
+  { name: 'Tailwind / CSS', level: 'Lv.7' },
+  { name: 'Algorithms',      level: 'Lv.5' },
+  { name: 'Git / CI-CD',     level: 'Lv.5' },
 ];
 
 export default function SkillsContent() {

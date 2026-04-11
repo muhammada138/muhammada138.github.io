@@ -16,7 +16,7 @@ A personal portfolio showcasing projects, skills, and work. Built with Astro for
 
 **Includes:**
 
-- **Projects section** — featured work with descriptions, stack, and links
+- **Projects section** — featured work with descriptions, stack, and links (regularly updated)
 - **Skills section** — overview of languages, frameworks, and tools
 - **Smooth animations** — page and element transitions via Framer Motion
 - **Fully static** — no server, no database, just fast HTML
