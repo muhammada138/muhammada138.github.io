@@ -8,10 +8,10 @@ export default {
         sans: ['Outfit', 'system-ui', 'sans-serif'],
       },
       colors: {
-        gold: '#C89B3C',
+        gold: '#c89b3c',
         // Dark palette — deep indigo/navy
         ink: {
-          950: '#06071a',
+          950: '#050a18',
           900: '#090c1f',
           800: '#0e1230',
         },
