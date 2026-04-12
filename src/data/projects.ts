@@ -15,21 +15,6 @@ export type Project = {
 
 const allProjects: Project[] = [
   {
-    slug: 'omnivault-password-manager',
-    title: 'OmniVault',
-    github: 'https://github.com/muhammada138/password-manager',
-    meta: 'Python · Tkinter · Cryptography · Fernet · PBKDF2',
-    tagline: 'A secure, offline-first password manager.',
-    desc: 'A modern, frameless desktop password manager featuring military-grade encryption, hotkey-driven auto-typing, and a streamlined UI.',
-    overview: [
-      'OmniVault was designed as an ultra-secure, local-only alternative to cloud-based password managers. It stores credentials in an encrypted binary vault using Fernet symmetric encryption, with keys derived securely via PBKDF2HMAC (SHA-256).',
-      'The custom Tkinter GUI features a modern, frameless dark theme with custom interactive components, straying far from the traditional aesthetic of default Python desktop apps. It runs quietly in the system tray and can be summoned instantly via a global hotkey.',
-      'To prevent clipboard hijacking, OmniVault features a unique "Click & Type" login logic using PyAutoGUI to simulate human keystrokes directly into targeted input fields, ensuring credentials never sit in the system clipboard.'
-    ],
-    tech: ['Python', 'Tkinter', 'Cryptography', 'PyAutoGUI', 'pystray'],
-    status: 'Complete',
-  },
-  {
     slug: 'space-mission-tracker',
     title: 'Space Mission Tracker',
     github: 'https://github.com/muhammada138/space-mission-tracker',
@@ -67,6 +52,22 @@ const allProjects: Project[] = [
       'The app also has a live game scoreboard, real-time rank lookups, an LP trend graph built from recent results, and a win prediction model. There is an in-app chat for follow-up questions, bookmarked profiles for quick access, and the whole thing runs on an async FastAPI backend with TTL caching to stay within Riot\'s rate limits.',
     ],
     tech: ['React', 'Python', 'FastAPI', 'Riot API', 'Groq', 'Vite', 'Tailwind CSS', 'React Router', 'Pydantic'],
+    status: 'Complete',
+  },
+  {
+    slug: 'omnivault-password-manager',
+    title: 'OmniVault',
+    github: 'https://github.com/muhammada138/password-manager',
+    images: ['/omnivault-1.png', '/omnivault-2.png', '/omnivault-3.png'],
+    meta: 'Python · Tkinter · Cryptography · Fernet · PBKDF2',
+    tagline: 'A secure, offline-first password manager.',
+    desc: 'A modern, frameless desktop password manager featuring military-grade encryption, hotkey-driven auto-typing, and a streamlined UI.',
+    overview: [
+      'OmniVault was designed as an ultra-secure, local-only alternative to cloud-based password managers. It stores credentials in an encrypted binary vault using Fernet symmetric encryption, with keys derived securely via PBKDF2HMAC (SHA-256).',
+      'The custom Tkinter GUI features a modern, frameless dark theme with custom interactive components, straying far from the traditional aesthetic of default Python desktop apps. It runs quietly in the system tray and can be summoned instantly via a global hotkey.',
+      'To prevent clipboard hijacking, OmniVault features a unique "Click & Type" login logic using PyAutoGUI to simulate human keystrokes directly into targeted input fields, ensuring credentials never sit in the system clipboard.'
+    ],
+    tech: ['Python', 'Tkinter', 'Cryptography', 'PyAutoGUI', 'pystray'],
     status: 'Complete',
   },
   {
