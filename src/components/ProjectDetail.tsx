@@ -103,7 +103,7 @@ export default function ProjectDetail({ project }: Props) {
                 exit="exit"
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 onClick={() => setLightbox(true)}
-                className="w-full h-full object-cover cursor-zoom-in"
+                className="w-full h-full object-contain cursor-zoom-in"
               />
             </AnimatePresence>
 
