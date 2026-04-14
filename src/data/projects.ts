@@ -62,7 +62,7 @@ const allProjects: Project[] = [
     images: ['/omnivault-1.png', '/omnivault-2.png', '/omnivault-3.png'],
     meta: 'Python · Tkinter · Cryptography · Fernet · PBKDF2',
     tagline: 'A secure, offline-first password manager.',
-    desc: 'A modern, frameless desktop password manager featuring military-grade encryption, hotkey-driven auto-typing, and a streamlined UI.',
+    desc: 'A modern, frameless desktop password manager featuring AES-128 Fernet encryption with PBKDF2HMAC key derivation, hotkey-driven auto-typing, and a streamlined UI.',
     overview: [
       'OmniVault was designed as an ultra-secure, local-only alternative to cloud-based password managers. It stores credentials in an encrypted binary vault using Fernet symmetric encryption, with keys derived securely via PBKDF2HMAC (SHA-256).',
       'The custom Tkinter GUI features a modern, frameless dark theme with custom interactive components, straying far from the traditional aesthetic of default Python desktop apps. It runs quietly in the system tray and can be summoned instantly via a global hotkey.',
