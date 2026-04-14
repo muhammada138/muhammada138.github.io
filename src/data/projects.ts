@@ -42,7 +42,7 @@ const allProjects: Project[] = [
     title: 'Rift IQ',
     github: 'https://github.com/muhammada138/league-coach',
     live: 'https://league-coach.vercel.app/',
-    images: ['/league-coach-1.png', '/league-coach-2.png', '/league-coach-3.png'],
+    images: ['/league-coach-1.png'],
     meta: 'React · FastAPI · Riot API · Groq · Python',
     tagline: 'Coaching grounded in your actual games, not global averages.',
     desc: 'AI-powered League of Legends coaching app that pulls your last 10 ranked games, benchmarks your stats against the other 9 players in each lobby, and generates specific improvement tips.',
