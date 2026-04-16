@@ -26,6 +26,8 @@ const allProjects: Project[] = [
       '/space-mission-tracker-4.png',
       '/space-mission-tracker-5.png',
       '/space-mission-tracker-6.png',
+      '/space-mission-tracker-7.png',
+      '/space-mission-tracker-8.png',
     ],
     meta: 'React · Django · PostgreSQL · WebGL · Launch Library 2 · SpaceX API',
     tagline: 'Professional mission control with real-time tracking and 3D visualization.',
@@ -43,7 +45,11 @@ const allProjects: Project[] = [
     title: 'Rift IQ',
     github: 'https://github.com/muhammada138/league-coach',
     live: 'https://league-coach.vercel.app/',
-    images: ['/league-coach-1.png'],
+    images: [
+      '/league-coach-1.png',
+      '/league-coach-2.png',
+      '/league-coach-3.png'
+    ],
     meta: 'React · FastAPI · Riot API · Groq · Python',
     tagline: 'Advanced LoL coaching with ML win prediction and lobby benchmarking.',
     desc: 'Rift IQ is an intelligent coaching platform for League of Legends that goes beyond simple statistics. It features a machine learning win predictor, real-time lobby benchmarking, and visual LP trend analysis to provide deep insights into your ranked performance.',
