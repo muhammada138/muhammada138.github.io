@@ -187,7 +187,8 @@ export default function ProjectDetail({ project }: Props) {
       <motion.div
         variants={container}
         initial="hidden"
-        animate="show"
+        whileInView="show"
+        viewport={{ once: true, margin: "-20px" }}
         className="mb-8"
       >
         <motion.p
@@ -210,8 +211,9 @@ export default function ProjectDetail({ project }: Props) {
       {/* Meta row */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.4 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
         className="flex items-center gap-6"
       >
         <div>

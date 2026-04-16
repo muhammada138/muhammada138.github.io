@@ -36,6 +36,9 @@ export default function ProjectsContent() {
             key={slug}
             href={`/projects/${slug}`}
             variants={item}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-20px" }}
             onMouseEnter={() => { setHovered(slug); playHoverSound(); }}
             style={{
               opacity: anyHovered && hovered !== slug ? 0.15 : 1,
