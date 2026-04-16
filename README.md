@@ -1,6 +1,6 @@
 # muhammad.lol
 
-Personal portfolio site. Built to be fast, clean, and easy to update.
+A modern and performant personal portfolio designed to showcase projects, skills, and professional achievements. It is built for speed and clarity, providing an engaging experience for visitors while remaining easy to maintain and expand.
 
 ![Astro](https://img.shields.io/badge/Astro-FF5D01?style=flat&logo=astro&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white)
