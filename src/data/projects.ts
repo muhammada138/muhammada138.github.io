@@ -40,7 +40,7 @@ const allProjects: Project[] = [
     tech: ['React', 'Django', 'PostgreSQL', 'WebGL', 'Three.js', 'Tailwind CSS', 'JWT', 'Launch Library 2', 'SpaceX API', 'Vite', 'Django REST Framework'],
     status: 'Complete',
   },
-  {
+    {
     slug: 'league-coach',
     title: 'Rift IQ',
     github: 'https://github.com/muhammada138/league-coach',
@@ -50,15 +50,15 @@ const allProjects: Project[] = [
       '/league-coach-2.png?v=1.1',
       '/league-coach-3.png?v=1.1'
     ],
-    meta: 'React · FastAPI · Riot API · Groq · Python',
-    tagline: 'Advanced LoL coaching with ML win prediction and lobby benchmarking.',
-    desc: 'Rift IQ is an intelligent coaching platform for League of Legends that goes beyond simple statistics. It features a machine learning win predictor, real-time lobby benchmarking, and visual LP trend analysis to provide deep insights into your ranked performance.',
+    meta: 'React · FastAPI · XGBoost · SQLite · Groq · LLaMA 3.3',
+    tagline: 'Professional LoL analytics with ML win prediction and AI coaching.',
+    desc: 'Rift IQ is a sophisticated coaching platform for League of Legends that leverages machine learning to provide deep competitive insights. It features a real-time XGBoost win predictor, lobby-relative benchmarking, and personalized AI coaching powered by LLaMA 3.3 70B.',
     overview: [
-      'While traditional tools offer static data, Rift IQ uses dynamic benchmarking to analyze your performance relative to every other player in your specific matches. It calculates a custom performance score based on your contribution to the game, looking at complex metrics like vision control and lane efficiency to provide a clear picture of your actual impact.',
-      'The platform includes a live game dashboard with a specialized win predictor that uses machine learning to estimate victory probability in real time. It analyzes factors like team composition, recent player form, and ranked consistency to provide a detailed breakdown of the match dynamics as they happen.',
-      'Players can also track their progress through interactive LP trend graphs that visualize rank changes over the last 30 days. The system uses advanced natural language processing to generate specific, actionable coaching tips tailored to your unique gameplay style, helping you identify exactly where to improve to maximize your competitive success.',
+      'Rift IQ moves beyond basic stat-tracking by implementing a real-time data pipeline that benchmarks player performance against the specific context of their matches. By comparing stats directly to the other nine players in a lobby rather than global averages, it provides a high-fidelity view of a player\'s actual impact on the game outcome.',
+      'The platform features a custom-trained XGBoost model for win probability estimation, including a specialized "Streamer Mode" that uses intelligent imputation to handle private profiles. This is complemented by a deep duo analysis system that scouts synergy between premade partners, tracking shared winrates and identifying optimal champion pairings.',
+      'To provide actionable growth paths, Rift IQ integrates with Groq to deliver personalized coaching tips. The system analyzes performance deltas across vision, combat, and economy, generating natural language advice that addresses specific weaknesses. All match history and performance trends are persisted in a local SQLite database, powering interactive LP graphs that visualize the player\'s competitive journey.',
     ],
-    tech: ['React', 'Python', 'FastAPI', 'Riot API', 'Groq', 'Vite', 'Tailwind CSS', 'React Router', 'Pydantic'],
+    tech: ['React', 'FastAPI', 'Python', 'XGBoost', 'SQLite', 'Groq', 'LLaMA 3.3', 'Riot API', 'Tailwind CSS', 'Recharts'],
     status: 'Complete',
   },
   {
